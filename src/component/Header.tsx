@@ -19,26 +19,32 @@ function Header() {
           <SymbolButton
             symbol={<LuBriefcaseBusiness size={"20"} />}
             content="Portfolio"
+            to="/portfolio"
           />
           <SymbolButton
             symbol={<LuBriefcaseBusiness size={"20"} />}
             content="Yield"
+            to="/yield"
           />
           <SymbolButton
             symbol={<LuBriefcaseBusiness size={"20"} />}
             content="Swap"
+            to="/swap"
           />
           <SymbolButton
             symbol={<LuBriefcaseBusiness size={"20"} />}
             content="Tokens"
+            to="/tokens"
           />
           <SymbolButton
             symbol={<LuBriefcaseBusiness size={"20"} />}
             content="Lending"
+            to="/lending-markets"
           />
           <SymbolButton
             symbol={<LuBriefcaseBusiness size={"20"} />}
-            content="States"
+            content="Stats"
+            to="/stats"
           />
         </div>
       </div>
