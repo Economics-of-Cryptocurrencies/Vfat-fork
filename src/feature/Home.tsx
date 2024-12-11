@@ -1,5 +1,11 @@
+import Layout from "../component/Layout";
+
 function Home() {
-  return <></>;
+  return (
+    <Layout>
+      <div></div>
+    </Layout>
+  );
 }
 
 export default Home;
