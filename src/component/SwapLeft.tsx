@@ -7,6 +7,7 @@ import Amount from "./ui/Amount";
 function SwapLeft() {
   const [networkSelectedId, setNetworkSelectedId] = useState(-1);
   const [tokenSelectedId, setTokenSelectedId] = useState(-1);
+  const [recieveTokenId, setReciveTokenId] = useState(0);
   return (
     <div className="bg-card text-card-foreground rounded-lg border shadow sm:min-w-[450px]">
       <div className="flex flex-col space-y-1.5 p-6">
@@ -31,7 +32,9 @@ function SwapLeft() {
             selectedId={networkSelectedId}
             changeSelectId={setNetworkSelectedId}
             searchData={network}
-            zIndex="z-20"
+            zIndex="z-30"
+            tooltip1="Select a network..."
+            tooltip2="Search network..."
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -49,7 +52,9 @@ function SwapLeft() {
             selectedId={tokenSelectedId}
             changeSelectId={setTokenSelectedId}
             searchData={token}
-            zIndex="z-10"
+            zIndex="z-20"
+            tooltip1="Select a token to send..."
+            tooltip2="Search tokens..."
           />
         </div>
         <Amount connectStatus={true} />
@@ -63,9 +68,15 @@ function SwapLeft() {
           >
             Token to recieve
           </label>
-          <div className="flex border-border border bg-background rounded-lg relative">
-            token
-          </div>
+          <SearchBox
+            connectWalletStatus={true}
+            selectedId={recieveTokenId}
+            changeSelectId={setReciveTokenId}
+            searchData={token}
+            zIndex="z-10"
+            tooltip1="Select a token to recieve"
+            tooltip2="Search tokens..."
+          />
         </div>
 
         <div className="flex flex-col gap-2 w-full">

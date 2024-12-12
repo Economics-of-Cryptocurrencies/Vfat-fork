@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   LuBriefcaseBusiness,
   LuBird,
@@ -16,7 +15,6 @@ interface HeaderProp {
 }
 
 function Header(props: HeaderProp) {
-  const [activeStatus, setActiveStatus] = useState(0);
   return (
     <header className="flex h-[48px] justify-between border bottom-1 border-[#e7e5e4] items-center fixed left-0 top-0 w-full bg-white">
       <div className="flex">

@@ -9,6 +9,8 @@ export interface SearchData {
 
 interface SearchBoxProps {
   connectWalletStatus: boolean;
+  tooltip1: string;
+  tooltip2: string;
   selectedId: number;
   changeSelectId: Function;
   searchData: Array<SearchData>;
@@ -39,6 +41,7 @@ function SearchBox(props: SearchBoxProps) {
         selectedId={props.selectedId}
         changeDisplayStatus={setSeachBoxContentDisplay}
         searchData={props.searchData}
+        tooltip={props.tooltip1}
       />
       <SearchBoxContent
         displayStatus={seachBoxContentDisplay}
@@ -46,6 +49,7 @@ function SearchBox(props: SearchBoxProps) {
         changeSelectId={props.changeSelectId}
         changeDisplayStatus={setSeachBoxContentDisplay}
         searchData={props.searchData}
+        tooltip={props.tooltip2}
       />
     </div>
   );

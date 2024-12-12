@@ -8,6 +8,7 @@ interface SearchBoxContentProps {
   changeSelectId: Function;
   changeDisplayStatus: Function;
   searchData: Array<SearchData>;
+  tooltip: string;
 }
 
 function SearchBoxContent(props: SearchBoxContentProps) {
@@ -22,7 +23,7 @@ function SearchBoxContent(props: SearchBoxContentProps) {
         <input
           type="text"
           className="text-sm ml-2 leading-3 py-3 focus:border-hidden focus:outline-hidden w-full focus-visible:outline-none h-9 custom-font-1"
-          placeholder="Search network..."
+          placeholder={props.tooltip}
         />
       </div>
       <div className="flex flex-col h-[288px] px-[5px] py-[5px] bg-white">

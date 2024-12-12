@@ -8,6 +8,7 @@ interface SearchBoxInputProps {
   selectedId: number;
   changeDisplayStatus: Function;
   searchData: Array<SearchData>;
+  tooltip: string;
 }
 
 function SearchBoxInput(props: SearchBoxInputProps) {
@@ -51,7 +52,7 @@ function SearchBoxInput(props: SearchBoxInputProps) {
                   : "text-[var(--secondary)]"
               }`}
             >
-              Select a network...
+              {props.tooltip}
             </span>
           </div>
 
