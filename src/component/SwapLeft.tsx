@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { LuBriefcaseBusiness } from "react-icons/lu";
 import SearchBox from "./ui/SearchBox";
 import network from "../tokendata/network";
 import token from "../tokendata/token";
 import Amount from "./ui/Amount";
 
 function SwapLeft() {
+  const [connectWalletStatus, setConnectWalletStatus] = useState(false);
+  const [tokenStatus, setTokenStatus] = useState(false);
   const [networkSelectedId, setNetworkSelectedId] = useState(-1);
   const [tokenSelectedId, setTokenSelectedId] = useState(-1);
   const [recieveTokenId, setReciveTokenId] = useState(0);
@@ -13,8 +14,10 @@ function SwapLeft() {
   return (
     <div className="bg-card text-card-foreground rounded-lg border shadow sm:min-w-[450px]">
       <div className="flex flex-col space-y-1.5 p-6">
-        <h2 className="font-semibold leading-none tracking-tight">Swap</h2>
-        <p className="text-muted-foreground text-sm">
+        <h2 className="font-semibold leading-none tracking-tight text-[var(--greydark2)] opacity-80">
+          Swap
+        </h2>
+        <p className="text-muted-foreground text-sm text-[var(--primary)]">
           Trade tokens using our DEX meta-aggregator.
         </p>
       </div>
@@ -23,14 +26,14 @@ function SwapLeft() {
           <label
             data-melt-label=""
             data-label-root=""
-            className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-80 text-[var(--greydark2)] opacity-80"
             htmlFor="network-combo-box-d17b311d-8c3d-4eb7-bb33-0d6a6b3e68ad"
             aria-disabled="false"
           >
             Network
           </label>
           <SearchBox
-            connectWalletStatus={true}
+            connectWalletStatus={connectWalletStatus}
             selectedId={networkSelectedId}
             changeSelectId={setNetworkSelectedId}
             searchData={network}
@@ -43,14 +46,14 @@ function SwapLeft() {
           <label
             data-melt-label=""
             data-label-root=""
-            className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-80 text-[var(--greydark2)] opacity-80"
             htmlFor="network-combo-box-d17b311d-8c3d-4eb7-bb33-0d6a6b3e68sd"
             aria-disabled="false"
           >
             Token to send
           </label>
           <SearchBox
-            connectWalletStatus={true}
+            connectWalletStatus={connectWalletStatus}
             selectedId={tokenSelectedId}
             changeSelectId={setTokenSelectedId}
             searchData={token}
@@ -59,19 +62,19 @@ function SwapLeft() {
             tooltip2="Search tokens..."
           />
         </div>
-        <Amount connectStatus={true} />
+        <Amount connectStatus={connectWalletStatus} />
         <div className="flex flex-col gap-2">
           <label
             data-melt-label=""
             data-label-root=""
-            className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-80 text-[var(--greydark2)] opacity-80"
             htmlFor="network-combo-box-d17b311d-8c3d-4eb7-bb33-0d6a6b3e68ad"
             aria-disabled="false"
           >
             Token to recieve
           </label>
           <SearchBox
-            connectWalletStatus={true}
+            connectWalletStatus={connectWalletStatus}
             selectedId={recieveTokenId}
             changeSelectId={setReciveTokenId}
             searchData={token}
@@ -86,7 +89,7 @@ function SwapLeft() {
             <label
               data-melt-label=""
               data-label-root=""
-              className="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs"
+              className="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-80 text-xs text-[var(--greydark2)] opacity-80"
               htmlFor="slippage-input-874008ba-1c52-45a5-99e8-cc97b5d685e1"
             >
               Slippage (%)
@@ -114,6 +117,7 @@ function SwapLeft() {
                   step="0.1"
                   type="number"
                   value={slippage}
+                  disabled={!tokenStatus}
                 />
               </div>
             </div>
@@ -126,6 +130,7 @@ function SwapLeft() {
                 onClick={() => {
                   setSlippage(0.1);
                 }}
+                disabled={!tokenStatus}
               >
                 0.1
               </button>
@@ -137,6 +142,7 @@ function SwapLeft() {
                 onClick={() => {
                   setSlippage(0.5);
                 }}
+                disabled={!tokenStatus}
               >
                 0.5
               </button>
@@ -148,6 +154,7 @@ function SwapLeft() {
                 onClick={() => {
                   setSlippage(1);
                 }}
+                disabled={!tokenStatus}
               >
                 1
               </button>
@@ -159,19 +166,21 @@ function SwapLeft() {
                 onClick={() => {
                   setSlippage(3);
                 }}
+                disabled={!tokenStatus}
               >
                 3
               </button>
             </div>
           </div>
         </div>
+        <div></div>
       </div>
 
       <div className="flex items-center p-6 pt-0">
         <button
           type="button"
           tabIndex={0}
-          className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-[2.8px] text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 shadow h-9 px-4 py-2 gap-3 bg-[var(--greydark)] text-[var(--greywhite)]"
+          className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-[2.8px] text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 shadow h-9 px-4 py-2 gap-3 bg-[var(--greydark)] text-[var(--greywhite)] cursor-default"
           style={{
             width: "100%",
             maxWidth: "unset",

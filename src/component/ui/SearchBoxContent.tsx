@@ -14,7 +14,7 @@ interface SearchBoxContentProps {
 function SearchBoxContent(props: SearchBoxContentProps) {
   return (
     <div
-      className={`flex flex-col border-[1px] border-[#e7e5e4] rounded-[4.8px] w-[286px] absolute inset-x-2/4	-translate-x-1/2 top-10 ${
+      className={`flex flex-col border shadow-md border-[#e7e5e4] rounded-[2.8px] w-[288px] absolute inset-x-2/4	-translate-x-1/2 top-10 ${
         props.displayStatus ? "" : "hidden"
       }`}
     >
@@ -26,7 +26,7 @@ function SearchBoxContent(props: SearchBoxContentProps) {
           placeholder={props.tooltip}
         />
       </div>
-      <div className="flex flex-col h-[288px] px-[5px] py-[5px] bg-white">
+      <div className="flex flex-col h-[296px] px-[5px] py-[5px] bg-white">
         <div className="flex flex-col overflow-y-scroll pr-[3px] custom-scroll-1">
           {props.searchData.map((ntk, idx) => (
             <div
@@ -47,7 +47,7 @@ function SearchBoxContent(props: SearchBoxContentProps) {
                 <img
                   src={ntk.imgUrl}
                   alt={ntk.name}
-                  className="ml-[9px]"
+                  className="ml-[9px] border bg-muted logo svelte-54um2v"
                   width={24}
                   height={24}
                 />

@@ -17,6 +17,8 @@
   --secondary: #1c1917;
   --greydark: #8c8b8a; /*button color */
   --greywhite: #f6f6f5; /*button text color */
+  --greydark1: #a6a5a5; /*button color1 */
+  --greydark2: #0c0a09; /*text color1*/
 }
 
 .btn-font {
@@ -81,4 +83,13 @@ input[type="number"]::-webkit-outer-spin-button {
 /* For Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.svelte-54um2v {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  border-radius: 50%;
 }
