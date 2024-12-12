@@ -1,5 +1,3 @@
-import React, { ReactNode } from "react";
-import { Link } from "react-router-dom";
 import { RxCheck } from "react-icons/rx";
 import { IoIosSearch } from "react-icons/io";
 import { SearchData } from "./SearchBox";
@@ -15,7 +13,7 @@ interface SearchBoxContentProps {
 function SearchBoxContent(props: SearchBoxContentProps) {
   return (
     <div
-      className={`flex flex-col border border-[1px] border-[#e7e5e4] rounded-[4.8px] w-[286px] absolute inset-x-2/4	-translate-x-1/2 top-10 ${
+      className={`flex flex-col border-[1px] border-[#e7e5e4] rounded-[4.8px] w-[286px] absolute inset-x-2/4	-translate-x-1/2 top-10 ${
         props.displayStatus ? "" : "hidden"
       }`}
     >

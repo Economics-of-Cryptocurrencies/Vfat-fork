@@ -1,6 +1,3 @@
-import React, { ReactNode } from "react";
-import { LuLogIn } from "react-icons/lu";
-
 interface AmountProps {
   connectStatus: boolean;
 }
@@ -26,7 +23,7 @@ function Amount(props: AmountProps) {
         </div>
         <div className="flex justify-between">
           <input
-            className="border w-[325px] border-[#e7e5e4] px-[12px] py-[4px] rounded-[2.88px]"
+            className="border focus-visible:outline-none w-[325px] border-[#e7e5e4] px-[12px] py-[4px] rounded-[2.88px]"
             type="text"
             placeholder="0"
           />
@@ -37,11 +34,11 @@ function Amount(props: AmountProps) {
             MAX
           </button>
         </div>
-        <div className="flex ">
+        <div className="flex px-1 mt-1">
           <input
             type="range"
-            value="50"
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+            value="0"
+            className="w-full custom-range-1 h-[6px] bg-gray-100 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
           />
         </div>
       </div>

@@ -1,4 +1,3 @@
-import React, { ReactNode } from "react";
 import { LuLogIn } from "react-icons/lu";
 
 interface ConnectWalletProps {

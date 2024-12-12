@@ -3,14 +3,13 @@ import {
   LuBird,
   LuSettings2,
   LuMoon,
-  LuLogIn,
 } from "react-icons/lu";
 import ConnectWallet from "./ui/ConnectWallet";
 import SymbolButton from "./ui/SymbolButton";
 
 function Header() {
   return (
-    <header className="flex justify-between border bottom-1 border-[#e7e5e4] items-center">
+    <header className="flex h-[48px] justify-between border bottom-1 border-[#e7e5e4] items-center fixed left-0 top-0 w-full bg-white">
       <div className="flex">
         <div className="logo px-[8px] py-[8px]">
           <LuBird size={"32"} />
@@ -49,10 +48,10 @@ function Header() {
         </div>
       </div>
       <div className="flex flex-row-reverse">
-        <button className="text-[#78716c] ml-[10px] mr-5 hover:bg-[#f5f5f4] text-[#0c0a09] px-[8px] py-[8px]">
+        <button className="text-[#78716c] ml-[10px] mr-5 hover:bg-[#f5f5f4] px-[8px] py-[8px]">
           <LuMoon size={"20"} />
         </button>
-        <button className="text-[#78716c] ml-[10px] hover:bg-[#f5f5f4] text-[#0c0a09] px-[8px] py-[8px]">
+        <button className="text-[#78716c] ml-[10px] hover:bg-[#f5f5f4] px-[8px] py-[8px]">
           <LuSettings2 size={"20"} />
         </button>
         <ConnectWallet connectStatus={true} />

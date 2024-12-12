@@ -1,8 +1,4 @@
-import React, { ReactNode, useRef, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { RxCheck } from "react-icons/rx";
-import { IoIosSearch } from "react-icons/io";
-import network from "../../tokendata/network";
+import { useRef, useEffect, useState } from "react";
 import SearchBoxInput from "./SearchBoxInput";
 import SearchBoxContent from "./SearchBoxContent";
 

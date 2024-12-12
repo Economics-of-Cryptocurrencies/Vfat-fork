@@ -1,5 +1,3 @@
-import React, { ReactNode } from "react";
-import { LuCheck } from "react-icons/lu";
 import { RiExpandUpDownLine } from "react-icons/ri";
 import network from "../../tokendata/network";
 import type { SearchData } from "./SearchBox";

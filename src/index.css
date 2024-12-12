@@ -57,3 +57,14 @@
   border-radius: 5px;
   height: 165px;
 }
+
+.custom-range-1::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px; /* Thumb size */
+  height: 16px;
+  background: #f7f5f5; /* Thumb color */
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
