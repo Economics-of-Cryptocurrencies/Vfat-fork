@@ -1,11 +1,11 @@
 import Layout from "../component/Layout";
 
-function Home() {
+function Yield() {
   return (
     <Layout>
-      <div>Home</div>
+      <div>Yield</div>
     </Layout>
   );
 }
 
-export default Home;
+export default Yield;

@@ -1,11 +1,11 @@
 import Layout from "../component/Layout";
 
-function Home() {
+function Stats() {
   return (
     <Layout>
-      <div>Home</div>
+      <div>Stats</div>
     </Layout>
   );
 }
 
-export default Home;
+export default Stats;
