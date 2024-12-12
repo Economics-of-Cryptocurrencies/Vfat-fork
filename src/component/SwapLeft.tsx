@@ -5,9 +5,9 @@ import token from "../tokendata/token";
 import Amount from "./ui/Amount";
 
 function SwapLeft() {
-  const [connectWalletStatus, setConnectWalletStatus] = useState(true); // connect wallet status
-  const [networkStatus, setNetworkStatus] = useState(false); // network select status
-  const [tokenStatus, setTokenStatus] = useState(false); // token select status
+  const [connectWalletStatus] = useState(true); // connect wallet status
+  // const [networkStatus, setNetworkStatus] = useState(false); // network select status
+  // const [tokenStatus, setTokenStatus] = useState(false); // token select status
   const [networkSelectedId, setNetworkSelectedId] = useState(-1);
   const [tokenSelectedId, setTokenSelectedId] = useState(-1);
   const [recieveTokenId, setReciveTokenId] = useState(0);
