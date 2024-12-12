@@ -5,8 +5,9 @@ import token from "../tokendata/token";
 import Amount from "./ui/Amount";
 
 function SwapLeft() {
-  const [connectWalletStatus, setConnectWalletStatus] = useState(false);
-  const [tokenStatus, setTokenStatus] = useState(false);
+  const [connectWalletStatus, setConnectWalletStatus] = useState(true); // connect wallet status
+  const [networkStatus, setNetworkStatus] = useState(false); // network select status
+  const [tokenStatus, setTokenStatus] = useState(false); // token select status
   const [networkSelectedId, setNetworkSelectedId] = useState(-1);
   const [tokenSelectedId, setTokenSelectedId] = useState(-1);
   const [recieveTokenId, setReciveTokenId] = useState(0);
@@ -40,6 +41,7 @@ function SwapLeft() {
             zIndex="z-30"
             tooltip1="Select a network..."
             tooltip2="Search network..."
+            width={"288px"}
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -53,13 +55,15 @@ function SwapLeft() {
             Token to send
           </label>
           <SearchBox
-            connectWalletStatus={connectWalletStatus}
+            connectWalletStatus={networkSelectedId !== -1}
             selectedId={tokenSelectedId}
             changeSelectId={setTokenSelectedId}
             searchData={token}
             zIndex="z-20"
             tooltip1="Select a token to send..."
             tooltip2="Search tokens..."
+            // width={"352px"}
+            width={"288px"}
           />
         </div>
         <Amount connectStatus={connectWalletStatus} />
@@ -74,13 +78,15 @@ function SwapLeft() {
             Token to recieve
           </label>
           <SearchBox
-            connectWalletStatus={connectWalletStatus}
+            connectWalletStatus={networkSelectedId !== -1}
             selectedId={recieveTokenId}
             changeSelectId={setReciveTokenId}
             searchData={token}
             zIndex="z-10"
             tooltip1="Select a token to recieve"
             tooltip2="Search tokens..."
+            // width={"352px"}
+            width={"288px"}
           />
         </div>
 
@@ -117,7 +123,7 @@ function SwapLeft() {
                   step="0.1"
                   type="number"
                   value={slippage}
-                  disabled={!tokenStatus}
+                  disabled={!connectWalletStatus}
                 />
               </div>
             </div>
@@ -125,48 +131,48 @@ function SwapLeft() {
               <button
                 type="button"
                 tabIndex={0}
-                className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm h-9 w-9 text-muted-foreground text-[var(--primary)] rounded-[2.8px]"
+                className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm h-9 w-9 text-muted-foreground text-[var(--primary)] rounded-[2.8px] hover:bg-[var(--hovercolor1)]"
                 data-button-root=""
                 onClick={() => {
                   setSlippage(0.1);
                 }}
-                disabled={!tokenStatus}
+                disabled={!connectWalletStatus}
               >
                 0.1
               </button>
               <button
                 type="button"
                 tabIndex={0}
-                className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm h-9 w-9 text-muted-foreground text-[var(--primary)] rounded-[2.8px]"
+                className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm h-9 w-9 text-muted-foreground text-[var(--primary)] rounded-[2.8px] hover:bg-[var(--hovercolor1)]"
                 data-button-root=""
                 onClick={() => {
                   setSlippage(0.5);
                 }}
-                disabled={!tokenStatus}
+                disabled={!connectWalletStatus}
               >
                 0.5
               </button>
               <button
                 type="button"
                 tabIndex={0}
-                className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm h-9 w-9 text-muted-foreground text-[var(--primary)] rounded-[2.8px]"
+                className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm h-9 w-9 text-muted-foreground text-[var(--primary)] rounded-[2.8px] hover:bg-[var(--hovercolor1)]"
                 data-button-root=""
                 onClick={() => {
                   setSlippage(1);
                 }}
-                disabled={!tokenStatus}
+                disabled={!connectWalletStatus}
               >
                 1
               </button>
               <button
                 type="button"
                 tabIndex={0}
-                className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm h-9 w-9 text-muted-foreground text-[var(--primary)] rounded-[2.8px]"
+                className="focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm h-9 w-9 text-muted-foreground text-[var(--primary)] rounded-[2.8px] hover:bg-[var(--hovercolor1)]"
                 data-button-root=""
                 onClick={() => {
                   setSlippage(3);
                 }}
-                disabled={!tokenStatus}
+                disabled={!connectWalletStatus}
               >
                 3
               </button>

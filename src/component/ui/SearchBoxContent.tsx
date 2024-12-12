@@ -9,12 +9,15 @@ interface SearchBoxContentProps {
   changeDisplayStatus: Function;
   searchData: Array<SearchData>;
   tooltip: string;
+  width: string;
 }
 
 function SearchBoxContent(props: SearchBoxContentProps) {
   return (
     <div
-      className={`flex flex-col border shadow-md border-[#e7e5e4] rounded-[2.8px] w-[288px] absolute inset-x-2/4	-translate-x-1/2 top-10 ${
+      className={`flex flex-col border shadow-md border-[#e7e5e4] rounded-[2.8px] w-[${
+        props.width
+      }] absolute inset-x-2/4	-translate-x-1/2 top-10 ${
         props.displayStatus ? "" : "hidden"
       }`}
     >

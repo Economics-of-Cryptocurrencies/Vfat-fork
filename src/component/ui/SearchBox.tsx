@@ -15,6 +15,7 @@ interface SearchBoxProps {
   changeSelectId: Function;
   searchData: Array<SearchData>;
   zIndex: string;
+  width: string;
 }
 
 function SearchBox(props: SearchBoxProps) {
@@ -50,6 +51,7 @@ function SearchBox(props: SearchBoxProps) {
         changeDisplayStatus={setSeachBoxContentDisplay}
         searchData={props.searchData}
         tooltip={props.tooltip2}
+        width={props.width}
       />
     </div>
   );
