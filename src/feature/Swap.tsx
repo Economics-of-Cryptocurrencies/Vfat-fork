@@ -1,4 +1,6 @@
 import Layout from "../component/Layout";
+import SwapLeft from "../component/SwapLeft";
+import SwapRight from "../component/SwapRight";
 
 function Swap() {
   return (
@@ -9,12 +11,8 @@ function Swap() {
             <div className="flex items-center justify-center gap-2 max-w-[200px] w-full">
               <div className="flex items-center justify-center gap-2 h-full">
                 <div className="flex gap-4">
-                  <div className="bg-card text-card-foreground rounded-lg border shadow sm:min-w-[450px]">
-                    card1
-                  </div>
-                  <div className="bg-card text-card-foreground rounded-lg border shadow sm:min-w-[450px]">
-                    card1
-                  </div>
+                  <SwapLeft />
+                  <SwapRight />
                 </div>
               </div>
             </div>
