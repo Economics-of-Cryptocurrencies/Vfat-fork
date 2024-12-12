@@ -16,7 +16,7 @@ function App() {
         <Route path="/yield" element={<Yield />} />
         <Route path="/swap" element={<Swap />} />
         <Route path="/tokens" element={<Token />} />
-        <Route path="/lending" element={<Lending />} />
+        <Route path="/lending-markets" element={<Lending />} />
         <Route path="/stats" element={<Stats />} />
       </Routes>
     </Router>

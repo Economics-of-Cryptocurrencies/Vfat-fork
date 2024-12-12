@@ -3,7 +3,7 @@ import Layout from "../component/Layout";
 function Token() {
   return (
     <Layout>
-      <Token />
+      <div>Token</div>
     </Layout>
   );
 }
