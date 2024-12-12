@@ -2,7 +2,7 @@ import Layout from "../component/Layout";
 
 function Yield() {
   return (
-    <Layout>
+    <Layout headerStatus={2}>
       <div>Yield</div>
     </Layout>
   );

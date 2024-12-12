@@ -2,14 +2,19 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 import { ReactNode } from "react";
 
-function Token({ children }: { children: ReactNode }) {
+interface LayoutProp {
+  headerStatus: number;
+  children: ReactNode;
+}
+
+function Layout(props: LayoutProp) {
   return (
     <div>
-      <Header />
-      <div>{children}</div>
+      <Header active={props.headerStatus} />
+      <div>{props.children}</div>
       <Footer />
     </div>
   );
 }
 
-export default Token;
+export default Layout;

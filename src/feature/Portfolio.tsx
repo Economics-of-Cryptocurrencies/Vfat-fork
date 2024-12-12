@@ -2,7 +2,7 @@ import Layout from "../component/Layout";
 
 function Portfolio() {
   return (
-    <Layout>
+    <Layout headerStatus={1}>
       <div>Portfolio</div>
     </Layout>
   );

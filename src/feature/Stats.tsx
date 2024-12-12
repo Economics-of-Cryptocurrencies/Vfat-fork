@@ -2,7 +2,7 @@ import Layout from "../component/Layout";
 
 function Stats() {
   return (
-    <Layout>
+    <Layout headerStatus={6}>
       <div>Stats</div>
     </Layout>
   );

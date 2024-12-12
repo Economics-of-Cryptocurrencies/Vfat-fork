@@ -2,7 +2,7 @@ import Layout from "../component/Layout";
 
 function Home() {
   return (
-    <Layout>
+    <Layout headerStatus={0}>
       <div>Home</div>
     </Layout>
   );

@@ -2,7 +2,7 @@ import Layout from "../component/Layout";
 
 function Token() {
   return (
-    <Layout>
+    <Layout headerStatus={4}>
       <div>Token</div>
     </Layout>
   );

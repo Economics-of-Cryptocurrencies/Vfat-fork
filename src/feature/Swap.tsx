@@ -4,7 +4,7 @@ import SwapRight from "../component/SwapRight";
 
 function Swap() {
   return (
-    <Layout>
+    <Layout headerStatus={3}>
       <div className="pt-[3rem] flex flex-col items-center justify-center w-full h-full min-h-[calc(100vh)]">
         <div className="flex-1 w-full px-[0.25rem] sm:px-0 pb-0 md:pb-[3.5rem]">
           <div className="px-2 w-full min-h-[calc(100vh-7.5rem)] flex flex-col items-center justify-center pb-8">
