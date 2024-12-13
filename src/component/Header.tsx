@@ -67,7 +67,7 @@ function Header(props: HeaderProp) {
         <button className="text-[#78716c] ml-[10px] hover:bg-[#f5f5f4] px-[8px] py-[8px]">
           <LuSettings2 size={"20"} />
         </button>
-        <ConnectWallet connectStatus={true} />
+        <ConnectWallet />
       </div>
     </header>
   );

@@ -3,6 +3,7 @@ import SearchBox from "./ui/SearchBox";
 import network from "../tokendata/network";
 import token from "../tokendata/token";
 import Amount from "./ui/Amount";
+import { useWallet } from "./Layout";
 
 function SwapLeft() {
   const [connectWalletStatus] = useState(true); // connect wallet status
@@ -12,6 +13,8 @@ function SwapLeft() {
   const [tokenSelectedId, setTokenSelectedId] = useState(-1);
   const [recieveTokenId, setReciveTokenId] = useState(0);
   const [slippage, setSlippage] = useState(0.1);
+
+  const wallet = useWallet();
   return (
     <div className="bg-card text-card-foreground rounded-lg border shadow sm:min-w-[450px]">
       <div className="flex flex-col space-y-1.5 p-6">
@@ -34,7 +37,7 @@ function SwapLeft() {
             Network
           </label>
           <SearchBox
-            connectWalletStatus={connectWalletStatus}
+            connectWalletStatus={wallet.walletStatus}
             selectedId={networkSelectedId}
             changeSelectId={setNetworkSelectedId}
             searchData={network}
@@ -66,7 +69,7 @@ function SwapLeft() {
             unchecked={true}
           />
         </div>
-        <Amount connectStatus={connectWalletStatus} />
+        <Amount connectStatus={wallet.walletStatus} />
         <div className="flex flex-col gap-2">
           <label
             data-melt-label=""
@@ -124,7 +127,7 @@ function SwapLeft() {
                   step="0.1"
                   type="number"
                   defaultValue={slippage}
-                  disabled={!connectWalletStatus}
+                  disabled={!wallet.walletStatus}
                 />
               </div>
             </div>
@@ -137,7 +140,7 @@ function SwapLeft() {
                 onClick={() => {
                   setSlippage(0.1);
                 }}
-                disabled={!connectWalletStatus}
+                disabled={!wallet.walletStatus}
               >
                 0.1
               </button>
@@ -149,7 +152,7 @@ function SwapLeft() {
                 onClick={() => {
                   setSlippage(0.5);
                 }}
-                disabled={!connectWalletStatus}
+                disabled={!wallet.walletStatus}
               >
                 0.5
               </button>
@@ -161,7 +164,7 @@ function SwapLeft() {
                 onClick={() => {
                   setSlippage(1);
                 }}
-                disabled={!connectWalletStatus}
+                disabled={!wallet.walletStatus}
               >
                 1
               </button>
@@ -173,7 +176,7 @@ function SwapLeft() {
                 onClick={() => {
                   setSlippage(3);
                 }}
-                disabled={!connectWalletStatus}
+                disabled={!wallet.walletStatus}
               >
                 3
               </button>
