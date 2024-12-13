@@ -60,9 +60,13 @@ function SearchBoxContent(props: SearchBoxContentProps) {
                   {ntk.name}
                 </span>
               </div>
-              {!props.notbalance && (
-                <span className="text-[var(--primary)]">0</span>
-              )}
+              <span
+                className={`"text-[var(--primary)]" ${
+                  !props.notbalance ? "" : "invisible"
+                }`}
+              >
+                0
+              </span>
             </div>
           ))}
         </div>
