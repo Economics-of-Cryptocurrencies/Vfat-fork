@@ -15,12 +15,18 @@
 
   --primary: #78716c;
   --secondary: #1c1917;
-  --greydark: #8c8b8a; /*button color */
-  --greywhite: #f6f6f5; /*button text color */
-  --greydark1: #a6a5a5; /*button color1 */
-  --greydark2: #0c0a09; /*text color1*/
-  --hovercolor1: #f5f5f4; /*hover color1*/
-  --light1: #e7e5e4; /* border color*/
+  --greydark: #8c8b8a;
+  /*button color */
+  --greywhite: #f6f6f5;
+  /*button text color */
+  --greydark1: #a6a5a5;
+  /*button color1 */
+  --greydark2: #0c0a09;
+  /*text color1*/
+  --hovercolor1: #f5f5f4;
+  /*hover color1*/
+  --light1: #e7e5e4;
+  /* border color*/
 }
 
 .btn-font {
@@ -41,8 +47,10 @@
   width: 7px;
   padding: 5px 0;
 }
+
 .custom-scroll-1::-webkit-scrollbar-horizontal {
-  height: 165px; /* Sets the height of the scrollbar */
+  height: 165px;
+  /* Sets the height of the scrollbar */
 }
 
 .custom-scroll-1::-webkit-scrollbar-button {
@@ -67,9 +75,11 @@
 .custom-range-1::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 16px; /* Thumb size */
+  width: 16px;
+  /* Thumb size */
   height: 16px;
-  background: #f7f5f5; /* Thumb color */
+  background: #f7f5f5;
+  /* Thumb color */
   cursor: pointer;
   border: 1px solid #000;
   border-radius: 50%;
@@ -85,6 +95,7 @@ input[type="number"]::-webkit-outer-spin-button {
 /* For Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .svelte-54um2v {
