@@ -6,8 +6,8 @@ interface AmountProps {
 }
 
 function Amount(props: AmountProps) {
-  let value1 = token[props.tokenSelectedId].value1 || 0;
-  let value2 = token[props.tokenSelectedId].value2 || 0;
+  let value1 = token[props.tokenSelectedId]?.value1 || 0;
+  let value2 = token[props.tokenSelectedId]?.value2 || 0;
 
   const [amount, setAmount] = useState("0");
   const [value, setValue] = useState(0);
