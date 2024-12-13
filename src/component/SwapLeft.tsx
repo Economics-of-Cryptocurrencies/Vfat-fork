@@ -69,7 +69,10 @@ function SwapLeft() {
             unchecked={true}
           />
         </div>
-        <Amount connectStatus={wallet.walletStatus} />
+        <Amount
+          connectStatus={wallet.walletStatus && tokenSelectedId !== -1}
+          tokenSelectedId={tokenSelectedId}
+        />
         <div className="flex flex-col gap-2">
           <label
             data-melt-label=""

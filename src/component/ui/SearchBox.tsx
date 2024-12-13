@@ -5,6 +5,9 @@ import SearchBoxContent from "./SearchBoxContent";
 export interface SearchData {
   name: string;
   imgUrl: string;
+  value1?: number;
+  value2?: number;
+  price?: string;
 }
 
 interface SearchBoxProps {

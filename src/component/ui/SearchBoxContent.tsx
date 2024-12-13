@@ -34,7 +34,7 @@ function SearchBoxContent(props: SearchBoxContentProps) {
           {props.searchData.map((ntk, idx) => (
             <div
               key={idx}
-              className="flex justify-between leading-[36px] pl-[12px] pr-[12px] cursor-default hover:bg-[#f5f5f4]"
+              className="flex justify-between leading-[36px] items-center pl-[12px] pr-[12px] cursor-default hover:bg-[#f5f5f4]"
               onClick={() => {
                 props.changeSelectId(idx);
                 props.changeDisplayStatus(false);
@@ -56,16 +56,19 @@ function SearchBoxContent(props: SearchBoxContentProps) {
                   width={24}
                   height={24}
                 />
-                <span className="ml-[15px] text-sm text-[#1c1917]">
+                <span className="ml-[15px] leading-[36px] text-sm text-[#1c1917]">
                   {ntk.name}
                 </span>
               </div>
               <span
-                className={`"text-[var(--primary)]" ${
+                className={`"text-[var(--primary)] text-sm leading-[36px] opacity-50 font-medium " ${
                   !props.notbalance ? "" : "invisible"
                 }`}
               >
-                0
+                {ntk?.value1 &&
+                  ntk?.value2 &&
+                  "($" + ntk.value1 + ") " + ntk.value2}
+                {!ntk?.value1 && "0"}
               </span>
             </div>
           ))}
