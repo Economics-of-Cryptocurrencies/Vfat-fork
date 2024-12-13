@@ -126,7 +126,7 @@ function SwapLeft() {
                   max="100"
                   step="0.1"
                   type="number"
-                  defaultValue={slippage}
+                  value={slippage}
                   disabled={!wallet.walletStatus}
                 />
               </div>
