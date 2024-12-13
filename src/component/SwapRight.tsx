@@ -10,9 +10,9 @@ function SwapRight() {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="lucide-icon lucide text-muted-foreground"
           >
             <path d="M6 10V5c0-1.7 1.3-3 3-3h1" key="13af7h"></path>

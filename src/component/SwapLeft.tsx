@@ -62,8 +62,8 @@ function SwapLeft() {
             zIndex="z-20"
             tooltip1="Select a token to send..."
             tooltip2="Search tokens..."
-            // width={"352px"}
-            width={"288px"}
+            width={"352px"}
+            unchecked={true}
           />
         </div>
         <Amount connectStatus={connectWalletStatus} />
@@ -85,8 +85,9 @@ function SwapLeft() {
             zIndex="z-10"
             tooltip1="Select a token to recieve"
             tooltip2="Search tokens..."
-            // width={"352px"}
-            width={"288px"}
+            width={"352px"}
+            unchecked={true}
+            notbalance={true}
           />
         </div>
 
@@ -122,7 +123,7 @@ function SwapLeft() {
                   max="100"
                   step="0.1"
                   type="number"
-                  value={slippage}
+                  defaultValue={slippage}
                   disabled={!connectWalletStatus}
                 />
               </div>
@@ -200,9 +201,9 @@ function SwapLeft() {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="lucide-icon lucide"
           >
             <path d="M6 10V5c0-1.7 1.3-3 3-3h1" key="13af7h"></path>

@@ -16,6 +16,8 @@ interface SearchBoxProps {
   searchData: Array<SearchData>;
   zIndex: string;
   width: string;
+  unchecked?: boolean;
+  notbalance?: boolean;
 }
 
 function SearchBox(props: SearchBoxProps) {
@@ -52,6 +54,8 @@ function SearchBox(props: SearchBoxProps) {
         searchData={props.searchData}
         tooltip={props.tooltip2}
         width={props.width}
+        unchecked={props.unchecked}
+        notbalance={props.notbalance}
       />
     </div>
   );

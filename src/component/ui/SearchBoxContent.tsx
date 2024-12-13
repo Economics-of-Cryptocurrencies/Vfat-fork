@@ -10,16 +10,16 @@ interface SearchBoxContentProps {
   searchData: Array<SearchData>;
   tooltip: string;
   width: string;
+  unchecked?: boolean;
+  notbalance?: boolean;
 }
 
 function SearchBoxContent(props: SearchBoxContentProps) {
   return (
     <div
-      className={`flex flex-col border shadow-md border-[#e7e5e4] rounded-[2.8px] w-[${
-        props.width
-      }] absolute inset-x-2/4	-translate-x-1/2 top-10 ${
-        props.displayStatus ? "" : "hidden"
-      }`}
+      className={`flex flex-col border shadow-md border-[#e7e5e4] rounded-[2.8px] absolute inset-x-2/4	-translate-x-1/2 top-10 ${
+        props.width === "352px" ? "w-[352px] " : "w-[288px] "
+      } ${props.displayStatus ? "" : "hidden"}`}
     >
       <div className="flex items-center pl-[12px] pr-[12px] border-b-[1px] bg-white">
         <IoIosSearch size={18} className="text-[var(--primary)]" />
@@ -34,7 +34,7 @@ function SearchBoxContent(props: SearchBoxContentProps) {
           {props.searchData.map((ntk, idx) => (
             <div
               key={idx}
-              className="flex justify-between leading-[40px] pl-[12px] pr-[12px] cursor-default hover:bg-[#f5f5f4]"
+              className="flex justify-between leading-[36px] pl-[12px] pr-[12px] cursor-default hover:bg-[#f5f5f4]"
               onClick={() => {
                 props.changeSelectId(idx);
                 props.changeDisplayStatus(false);
@@ -44,7 +44,9 @@ function SearchBoxContent(props: SearchBoxContentProps) {
                 <RxCheck
                   size={16}
                   className={`font-bold text-sm text-black ${
-                    idx === props.selectedId ? "" : " invisible"
+                    idx === props.selectedId && !props.unchecked
+                      ? ""
+                      : " invisible"
                   }`}
                 />
                 <img
@@ -58,7 +60,9 @@ function SearchBoxContent(props: SearchBoxContentProps) {
                   {ntk.name}
                 </span>
               </div>
-              <span className="text-[var(--primary)]">0</span>
+              {!props.notbalance && (
+                <span className="text-[var(--primary)]">0</span>
+              )}
             </div>
           ))}
         </div>

@@ -37,7 +37,7 @@ function Amount(props: AmountProps) {
         <div className="flex px-1 mt-1">
           <input
             type="range"
-            value="0"
+            defaultValue="0"
             className="w-full custom-range-1 h-[6px] bg-gray-100 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
           />
         </div>
@@ -84,7 +84,7 @@ function Amount(props: AmountProps) {
         <div className="flex px-1 mt-1">
           <input
             type="range"
-            value="0"
+            defaultValue="0"
             className="w-full custom-range-1 h-[6px] bg-gray-100 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
           />
         </div>
