@@ -1,11 +1,8 @@
-import { useContext } from "react";
 import { LuLogIn } from "react-icons/lu";
 import { LuWallet, LuLogOut } from "react-icons/lu";
 import { useWallet } from "../Layout";
 
-interface ConnectWalletProps {}
-
-function ConnectWallet(props: ConnectWalletProps) {
+function ConnectWallet() {
   const wallet = useWallet();
 
   if (wallet && !wallet?.walletStatus) {
